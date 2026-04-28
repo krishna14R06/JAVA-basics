@@ -23,24 +23,48 @@ public class FMD5{
         int bincoeff = fac_n/(fac_r*fac_nmr);
         return bincoeff;
     }
+    // Q to find prime num
+    public static boolean isprime(int n){
+        if(n == 2){
+            return true;
+        }
+        for(int i = 2; i <= Math.sqrt(n); i++){
+            if(n%i == 0){
+                return false;
+            } 
+        }return true;
+
+    }
+
+    // Q to print all prime num in range 
+    public static void primeinrange(int n){
+        for(int i = 2; i<=n; i++){
+            if(isprime(i)){
+                System.out.println(i + " ");
+            }
+        }
+        
+    }
 
     public static void main(String args []){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter two num to find its product !");
-        int a = sc.nextInt();
-        int b = sc.nextInt();
-        sum(a,b);
-        System.out.println("Enter num to find its factorial:");
-        int c = sc.nextInt();
-        int fac = factorial(c);
-        System.out.println("Your factorial is:" + fac);
+        // System.out.println("Enter two num to find its product !");
+        // int a = sc.nextInt();
+        // int b = sc.nextInt();
+        // sum(a,b);
+        // System.out.println("Enter num to find its factorial:");
+        // int c = sc.nextInt();
+        // int fac = factorial(c);
+        // System.out.println("Your factorial is:" + fac);
         
         
-        System.out.println("Enter N & R");
+        // System.out.println("Enter N & R");
         int n = sc.nextInt();
-        int r = sc.nextInt();
-        int bincoeff = bincoeff(n,r);
-        System.out.println("Your bincoeffficent is:" + bincoeff);
+        // int r = sc.nextInt();
+        // int bincoeff = bincoeff(n,r);
+        // System.out.println("Your bincoeffficent is:" + bincoeff);
+
+        primeinrange(n);
 
         sc.close();
     }
