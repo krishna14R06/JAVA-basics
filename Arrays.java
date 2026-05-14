@@ -40,6 +40,7 @@ public class Arrays {
         return -1;
     }
 
+    // --- TOOL 4: Reverse Array ---
     public static void reverse(int reverseArr[]){
         int start = 0;
         int end = reverseArr.length - 1;
@@ -51,10 +52,32 @@ public class Arrays {
             end--;
         }
     }
+    // --- TOOL 5: pairs of Array ---
+    public static void pairArr(int num[]){
+        for(int i = 0; i < num.length; i++){
+            for(int j = i+1; j<num.length; j++){
+                System.out.print("(" + num[i] + "," + num[j] + ") ");
+            }
+            System.out.println("");
+        }
+    }
 
+    // --- TOOL 6: Subarray ---
+    public static void subArr(int num[]) {
+    for (int i = 0; i < num.length; i++) {
+        for (int j = i; j < num.length; j++) {
+            System.out.print("["); 
+            for (int k = i; k <= j; k++) {
+                System.out.print(num[k] + " "); 
+            }
+            System.out.print("] "); 
+        }
+        System.out.println(); 
+    }
+}
     public static void main(String args[]) {
         // Data Vaults
-        int num[] = {2, 5, 1, 8, 9, 4};
+        int num[] = {1, 2, 3, 4, 5, 6};
         int sortedarr[] = {3, 6, 9, 12, 15, 18};
         int reverseArr[] = {4,2,7,3,0,5};
         
@@ -77,9 +100,11 @@ public class Arrays {
         }
 
         reverse(reverseArr);
-        for(int i=0; i<reverseArr.length-1; i++){
+        for(int i=0; i<reverseArr.length; i++){
         System.out.print(reverseArr[i] + " ");
-        }
+        }System.out.println();
         
+        pairArr(num);
+        subArr(num);
     }
 }
