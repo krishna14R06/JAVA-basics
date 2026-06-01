@@ -73,8 +73,23 @@ public class Arrays {
             System.out.print("] "); 
         }
         System.out.println(); 
-    }
-}
+    }}
+
+    public static void maxSubarraySum(int num[]) {
+        int maxSum = Integer.MIN_VALUE; 
+        for (int i = 0; i < num.length; i++) {
+            for (int j = i; j < num.length; j++) {
+                int currSum = 0; 
+                for (int k = i; k <= j; k++) {
+                    currSum += num[k]; 
+                }
+                if (currSum > maxSum) {
+                    maxSum = currSum;
+                }
+            }
+        }
+        System.out.println("The Maximum Subarray Sum is: " + maxSum);}
+    
     public static void main(String args[]) {
         // Data Vaults
         int num[] = {1, 2, 3, 4, 5, 6};
@@ -85,7 +100,7 @@ public class Arrays {
         int search = 4;
         int search2 = 3;
 
-        // Executing Tools
+        // Executing Tool
         int linearindex = linearSearch(num, search);
         System.out.println("For your linear search value index is:" + linearindex);
 
@@ -106,5 +121,9 @@ public class Arrays {
         
         pairArr(num);
         subArr(num);
+
+        int numbers[] = {2, 4, 6, 8};
+        System.out.println("--- Testing Maximum Subarray Sum ---");
+        maxSubarraySum(numbers);
     }
 }
