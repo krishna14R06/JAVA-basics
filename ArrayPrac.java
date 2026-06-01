@@ -1,5 +1,3 @@
-import java.util.*;
-
 public class ArrayPrac {
 
     // --- TOOL 1: Linear Search ---
