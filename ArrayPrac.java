@@ -106,7 +106,12 @@ public class ArrayPrac {
         
         for (int i = 0; i < num.length; i++) {
             for (int j = i; j < num.length; j++) {
-                int currSum = i == 0 ? prefix[j] : prefix[j] - prefix[i - 1];
+                int currSum;
+                if(i==0){
+                    currSum = prefix[j];
+                }else{
+                    currSum = prefix[j] - prefix[i - 1];
+                }
                 if (currSum > maxSum) {
                     maxSum = currSum;
                 }
